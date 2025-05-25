@@ -8,7 +8,6 @@ VALIDATE $? "disabling default nginx"
 dnf module enable nginx:1.24 -y &>> $LOG_FILE
 VALIDATE $? "disabling nginx version 1.24"
 
-rm -f /etc/nginx/nginx.conf 
 dnf install nginx -y &>> $LOG_FILE
 VALIDATE $? "Installing Nginx"
 
@@ -24,11 +23,12 @@ VALIDATE $? "deploying source code"
 systemctl enable nginx &>> $LOG_FILE
 VALIDATE $? "Enabling Nginx"
 
-systemctl start nginx
-VALIDATE $? "Starting Nginx"
-
+rm -f /etc/nginx/nginx.conf 
 cp $SCRIPT_PATH/nginx.conf /etc/nginx/nginx.conf 
 VALIDATE $? "Updating Nginx configuration file"
+
+systemctl start nginx
+VALIDATE $? "Starting Nginx"
 
 systemctl restart nginx
 VALIDATE $? "restarting Nginx"
