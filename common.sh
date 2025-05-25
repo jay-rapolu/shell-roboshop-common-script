@@ -38,6 +38,9 @@ NODEJS_SETUP(){
 
     dnf install nodejs -y &>> $LOG_FILE
     VALIDATE $? "Installing nodejs"
+
+    npm install
+        VALIDATE $? "Installing Dependencies"
 }
 
 APP_SETUP(){
