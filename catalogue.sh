@@ -3,9 +3,9 @@
 APP_NAME="catalogue"
 source ./common.sh
 
-NODEJS_SETUP
-
 APP_SETUP
+
+NODEJS_SETUP
 
 cp $SCRIPT_PATH/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "creating mongodb repo file"
