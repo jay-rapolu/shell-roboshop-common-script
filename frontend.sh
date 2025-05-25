@@ -26,6 +26,7 @@ VALIDATE $? "Enabling Nginx"
 systemctl start nginx
 VALIDATE $? "Starting Nginx"
 
+rm -f /etc/nginx/nginx.conf 
 cp $SCRIPT_PATH/nginx.conf /etc/nginx/nginx.conf 
 VALIDATE $? "Updating Nginx configuration file"
 
