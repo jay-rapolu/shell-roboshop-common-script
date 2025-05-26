@@ -2,10 +2,11 @@
 
 source ./common.sh
 
-APP_NAME="cart"
+APP_NAME="user"
 
-APP_SETUP 
+APP_SETUP
 
 NODEJS_SETUP
 
 SERVICE_SETUP
+
